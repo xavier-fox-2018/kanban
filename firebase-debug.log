@@ -1,0 +1,49 @@
+[debug] [2018-11-18T15:29:23.443Z] ----------------------------------------------------------------------
+[debug] [2018-11-18T15:29:23.445Z] Command:       /usr/bin/node /usr/bin/firebase init
+[debug] [2018-11-18T15:29:23.445Z] CLI Version:   6.0.1
+[debug] [2018-11-18T15:29:23.445Z] Platform:      linux
+[debug] [2018-11-18T15:29:23.445Z] Node Version:  v10.13.0
+[debug] [2018-11-18T15:29:23.446Z] Time:          Sun Nov 18 2018 22:29:23 GMT+0700 (Western Indonesia Time)
+[debug] [2018-11-18T15:29:23.446Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-18T15:29:23.488Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-18T15:29:23.489Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/agung/Desktop/hacktiv8/Old/week3/weekend-portfolio/kanban
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, skipping
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2018-11-18T15:29:40.123Z] Error: ENOTDIR: not a directory, open '/home/agung/Desktop/hacktiv8/Old/week3/weekend-portfolio/kanban/y/404.html'
+    at Object.openSync (fs.js:436:3)
+    at Object.writeFileSync (fs.js:1187:35)
+    at Object.createFileSync (/usr/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/ensure/file.js:34:6)
+    at Config.writeProjectFile (/usr/lib/node_modules/firebase-tools/lib/config.js:160:8)
+    at /usr/lib/node_modules/firebase-tools/lib/config.js:179:18
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: An unexpected error has occurred.
