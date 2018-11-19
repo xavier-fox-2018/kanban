@@ -162,7 +162,7 @@
             <button v-if="task.status !== 'in_progress' && task.status !== 'done'" v-on:click="changeStatus('in_progress')" type="button" class="btn btn-info" data-dismiss="modal">In Progress</button>
             <button v-if="task.status !== 'reviewed' && task.status !== 'done'" v-on:click="changeStatus('reviewed')" type="button" class="btn btn-warning" data-dismiss="modal">Reviewed</button>
             <button v-if="task.status !== 'done'" v-on:click="changeStatus('done')" type="button" class="btn btn-success" data-dismiss="modal">Done</button>
-            <button  type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+            <button v-on:click="removeTask()"  type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
             <!-- <button v-on:click="addTask()" type="button" class="btn btn-primary">Add</button> -->
           </div>
         </div>
@@ -281,6 +281,13 @@ export default {
               assigned_to: self.task.assigned_to,
               status: status
             })
+    },
+    removeTask() {
+      let self = this
+
+      database
+            .ref('tasks/' + self.task.name)
+            .set({})
     }
   }
 }
