@@ -3,7 +3,7 @@
         <h2>dgdgdf</h2>
         <div class="container-button">
             <div><h4>delete</h4></div>
-            <div><h4>{{ title }}</h4></div>
+            <div><h4></h4></div>
             <div><h4></h4></div>
         </div>
     </div>
@@ -12,7 +12,6 @@
 <script>
 export default {
     name: 'Content',
-    props: ['title'],
 }
 </script>
 

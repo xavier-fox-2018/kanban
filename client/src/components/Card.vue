@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <h2>{{ name }}</h2>
+        <h3>{{ name }}</h3>
         <Content />
     </div>
 </template>
@@ -11,7 +11,7 @@ import Content from '@/components/Content.vue'
 export default {
     name: 'Card',
     props: ['name', 'dataCard'],
-    component: {
+    components: {
         Content,
     },
 }
