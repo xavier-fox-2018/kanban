@@ -2,7 +2,7 @@
     <div>
         <ul class="list-group">
             <li class="list-group-item active">{{ title }} </li>
-            <Card  v-on:changeInfoToBoard="info" v-for="(task, index) in tasks" :task="task" :key="index"> </Card>
+            <Card  v-on:sendDeleteInfo="infoDelete" v-on:changeInfoToBoard="info" v-for="(task, index) in tasks" :task="task" :key="index"> </Card>
         </ul>
     </div>
 </template>
@@ -17,6 +17,10 @@ export default {
     methods: {
         info: function(data) {
             this.$emit('changeInfoToHome', data)
+        },
+        infoDelete: function(data) {
+            this.$emit('sendDeleteFromBoard', data)
+            // console.log('data lewat board');
         }
     }
 }

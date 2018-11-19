@@ -6,7 +6,7 @@
                 <p class="card-text">{{ task.description }}</p>
                 <p class="card-text">point: {{ task.point }}</p>
                 <p class="card-text">assigned to: {{ task.assignedTo }}</p>
-                <button class="btn btn-danger btn-sm"> Delete </button>
+                <button class="btn btn-danger btn-sm" @click="deleteTask"> Delete </button>
                 <button class="btn btn-warning btn-sm ml-1" v-if="backlog" @click="changetoBacklog"> Back-Log </button>
                 <button class="btn btn-warning btn-sm ml-1" v-if="todo" @click="changetoTodo"> To-Do </button>
                 <button class="btn btn-warning btn-sm ml-1" v-if="doing" @click="changetoDoing"> Doing </button>
@@ -31,6 +31,11 @@ export default {
         }
     },
     methods: {
+        deleteTask: function() {
+            this.$emit('sendDeleteInfo', this.task.id)
+            console.log('data kirim ke board'); 
+        },
+
         checkStatus: function() {
             if (this.task.status == "back-log") {
                 this.todo = true

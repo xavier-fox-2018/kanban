@@ -4,7 +4,7 @@
     
     <div class="row">
       <div class="col-3" v-for="board in boards" :key="board.name">
-        <Board v-on:changeInfoToHome="info" :title="board.name" :tasks="board.tasks"></Board>
+        <Board  v-on:sendDeleteFromBoard="infoDelete" v-on:changeInfoToHome="info" :title="board.name" :tasks="board.tasks"></Board>
       </div>
     </div>
     
@@ -34,6 +34,12 @@ export default {
   },
 
   methods: {
+    infoDelete: function(data) {
+      // console.log(data, 'dari board, udah di home');
+      database.ref(`db/tasks/${data}`).remove()
+      this.getData()
+    },
+
     info: function(data) {
       console.log('from board', data);
       this.currentChanging = data
@@ -104,6 +110,8 @@ export default {
       })
       this.getData()
     },
+
+
 
 
     getData: function() {
