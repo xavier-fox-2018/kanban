@@ -1,6 +1,6 @@
 # kanban
 
-## Project setup
+## Link
 ```
 http://hadinw.online/
 ```
