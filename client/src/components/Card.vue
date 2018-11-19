@@ -1,7 +1,13 @@
 <template>
     <div class="card">
         <h3>{{ name }}</h3>
-        <Content />
+        <Content
+            v-for="(data, index) in dataCard"
+            :key="index"
+            :title="data.title"
+            :back="back"
+            :next="next"
+        />
     </div>
 </template>
 
@@ -10,7 +16,7 @@ import Content from '@/components/Content.vue'
 
 export default {
     name: 'Card',
-    props: ['name', 'dataCard'],
+    props: ['name', 'dataCard', 'back', 'next'],
     components: {
         Content,
     },

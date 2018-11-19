@@ -1,10 +1,10 @@
 <template>
     <div class="cardContent">
-        <h2>dgdgdf</h2>
+        <h2>{{ title }}</h2>
         <div class="container-button">
             <div><h4>delete</h4></div>
-            <div><h4></h4></div>
-            <div><h4></h4></div>
+            <div><h4>{{ back }}</h4></div>
+            <div><h4>{{ next }}</h4></div>
         </div>
     </div>
 </template>
@@ -12,6 +12,7 @@
 <script>
 export default {
     name: 'Content',
+    props: ['title', 'back', 'next'],
 }
 </script>
 
@@ -44,7 +45,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 30%;
+    width: 75%;
     padding: 2%;
     border-radius: 5px;
 }

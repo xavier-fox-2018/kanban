@@ -3,10 +3,10 @@
         <Header></Header>
         <div class="container">
             <div class="container-card">
-                <Card title="Back-Log" :dataCard="data1" name="Back-Log"></Card>
-                <Card title="To-Do" :dataCard="data1" name="To-Do"></Card>
-                <Card title="Doing" :dataCard="data1" name="Doing"></Card>
-                <Card title="Done" :dataCard="data1" name="Done"></Card>
+                <Card title="Back-Log" :dataCard="data1" name="Back-Log" back="" next="To-Do" />
+                <Card title="To-Do" :dataCard="data2" name="To-Do" back="Back-Log" next="Doing" />
+                <Card title="Doing" :dataCard="data3" name="Doing" back="To-Do" next="Done" />
+                <Card title="Done" :dataCard="data4" name="Done" back="Doing" next="" />
             </div>
         </div>
     </div>
