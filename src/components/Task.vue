@@ -6,10 +6,6 @@
             </div>
             <div class="card-body text-left">
                 <div class="font-weight-bold">
-                    Description:
-                    <p class="lead">{{ item.description }}</p>
-                </div>
-                <div class="font-weight-bold">
                     Point:
                     <p class="lead">{{ item.point }}</p>
                 </div>
@@ -19,11 +15,37 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-danger btn-block font-weight-bold mb-2" id="btn-delete" data-toggle="modal" data-target="#confirmModalDelete" @click="removeTask">Delete</button>
-                <button class="btn btn-block font-weight-bold" id="btn-one" v-if="buttonOne" @click="moveUp">{{ buttonOne }}</button>
-                <button class="btn btn-block font-weight-bold" id="btn-two" @click="moveDown" v-if="buttonTwo">{{ buttonTwo }}</button>
+                <button class="btn btn-danger btn-block font-weight-bold" data-toggle="modal" :data-target="'#'+ item.id">Show Details</button>
             </div>
         </div>
+
+        <!-- OPTIONS MODAL -->
+        <div class="modal fade" :id="item.id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Details and Actions</h5>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="font-weight-bold text-left ml-2">
+                            Task Description:
+                            <p class="lead">{{ item.description }}</p>
+                        </div>
+                        <div class="font-weight-bold text-left ml-2">
+                            Status:
+                            <p class="lead">{{ item.status }}</p>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center" id="div-options">
+                            <button class="btn btn-primary mr-4 font-weight-bold" data-dismiss="modal" id="btn-one" v-if="buttonTwo" @click="moveDown">{{ buttonTwo }}</button>
+                            <button class="btn btn-danger font-weight-bold" data-dismiss="modal" @click="removeTask">Delete</button>
+                            <button class="btn btn-info ml-4 font-weight-bold" data-dismiss="modal" id="btn-two" v-if="buttonOne" @click="moveUp">{{ buttonOne }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -111,5 +133,9 @@ export default {
 #content-header {
   background-color: #3b5998;
   color: white;
+}
+
+#div-options {
+    height: 70px;;
 }
 </style>
