@@ -30,7 +30,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     vertical-align: middle;
     cursor: pointer;
     padding-bottom: 20px;

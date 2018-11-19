@@ -5,7 +5,7 @@
             <ul class="navbar-nav mr-auto"></ul>
             <form class="form-inline">
                 <a href="#" class="btn btn-outline-primary mr-1" @click="showModal = true">
-                    <i class="fa fa-telegram"></i> Add Kanban
+                    <i class="fa fa-telegram"></i> Add Task
                 </a>
             </form>
         </div>
